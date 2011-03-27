@@ -21,13 +21,17 @@
     [head release];
     head = [[HttpHeader alloc] init];
     [headerRows addObject:head];
-    [headerRows addObject:[[HttpHeader alloc] init]];
-    [headerRows addObject:[[HttpHeader alloc] init]];
-    [headerRows addObject:[[HttpHeader alloc] init]];
-    receivedData = [[NSMutableData alloc] init];
-    [httpUri setStringValue:@"http://"];
-
-    
+    [head release];
+    head = [[HttpHeader alloc] init];
+    [headerRows addObject:head];
+    [head release];
+    head = [[HttpHeader alloc] init];
+    [headerRows addObject:head];
+    [head release];
+    head = [[HttpHeader alloc] init];
+    [headerRows addObject:head];    
+    [head release];
+    receivedData = [[NSMutableData alloc] init];    
     return self;
 }
 
