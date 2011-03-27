@@ -55,10 +55,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D325BD1133ECC7E00283DC0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBBAA3132C657300C301D7 /* MainViewController.h */,
+				C7893048132C6FEE00D76EC2 /* HttpHeader.h */,
+				C7FBBA93132C623400C301D7 /* RestTestAppDelegate.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		9D325BD3133ECCB300283DC0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBBA96132C623400C301D7 /* MainMenu.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		C7893046132C6FB900D76EC2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C7893048132C6FEE00D76EC2 /* HttpHeader.h */,
+				C7FBBA94132C623400C301D7 /* RestTestAppDelegate.m */,
+				C7FBBAA4132C657300C301D7 /* MainViewController.m */,
 				C7893049132C6FEE00D76EC2 /* HttpHeader.m */,
 			);
 			name = Classes;
@@ -122,13 +141,10 @@
 		C7FBBA87132C623300C301D7 /* RestTest */ = {
 			isa = PBXGroup;
 			children = (
-				C7893046132C6FB900D76EC2 /* Classes */,
-				C7FBBA93132C623400C301D7 /* RestTestAppDelegate.h */,
-				C7FBBA94132C623400C301D7 /* RestTestAppDelegate.m */,
-				C7FBBA96132C623400C301D7 /* MainMenu.xib */,
+				9D325BD1133ECC7E00283DC0 /* Headers */,
 				C7FBBA88132C623300C301D7 /* Supporting Files */,
-				C7FBBAA3132C657300C301D7 /* MainViewController.h */,
-				C7FBBAA4132C657300C301D7 /* MainViewController.m */,
+				9D325BD3133ECCB300283DC0 /* UI */,
+				C7893046132C6FB900D76EC2 /* Classes */,
 				C78F43E41330613C0062BAE3 /* Credits.rtf */,
 			);
 			path = RestTest;

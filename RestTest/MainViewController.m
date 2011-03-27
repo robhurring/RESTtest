@@ -17,9 +17,22 @@
     responseHeadersArray = [[NSMutableArray alloc] init];
     headerRows = [[NSMutableArray alloc] initWithCapacity:10];
     [headerRows addObject:[[HttpHeader alloc] init]];
+    [headerRows addObject:[[HttpHeader alloc] init]];
+    [headerRows addObject:[[HttpHeader alloc] init]];
+    [headerRows addObject:[[HttpHeader alloc] init]];
+    [headerRows addObject:[[HttpHeader alloc] init]];
     receivedData = [[NSMutableData alloc] init];
+    [httpUri setStringValue:@"http://"];
     return self;
 }
+
+
+- (void)windowDidLoad {
+    
+}
+
+
+
 
 -(IBAction) addRow:(id)sender{
     [headerRows addObject:[[HttpHeader alloc] init]];
