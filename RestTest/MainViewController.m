@@ -16,23 +16,20 @@
 -(id) initWithCoder:(NSCoder *)aDecoder{
     responseHeadersArray = [[NSMutableArray alloc] init];
     headerRows = [[NSMutableArray alloc] initWithCapacity:10];
-    [headerRows addObject:[[HttpHeader alloc] init]];
-    [headerRows addObject:[[HttpHeader alloc] init]];
+    HttpHeader *head = [[HttpHeader alloc] initWithPair:@"Content-Type" withValue:@"text/html"];
+    [headerRows addObject:head];
+    [head release];
+    head = [[HttpHeader alloc] init];
+    [headerRows addObject:head];
     [headerRows addObject:[[HttpHeader alloc] init]];
     [headerRows addObject:[[HttpHeader alloc] init]];
     [headerRows addObject:[[HttpHeader alloc] init]];
     receivedData = [[NSMutableData alloc] init];
     [httpUri setStringValue:@"http://"];
+
+    
     return self;
 }
-
-
-- (void)windowDidLoad {
-    
-}
-
-
-
 
 -(IBAction) addRow:(id)sender{
     [headerRows addObject:[[HttpHeader alloc] init]];
@@ -58,6 +55,8 @@
                                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                         timeoutInterval:60.0];
     NSString *method = [httpVerb stringValue];
+    if ([method length] == 0)
+        method = @"GET";
     
     NSData *body = [[[httpBody textStorage] string] dataUsingEncoding:NSUTF8StringEncoding];    
     [theRequest setHTTPBody:body];

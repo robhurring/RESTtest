@@ -19,4 +19,6 @@
 @property(nonatomic, retain) NSString *headerName;
 @property(nonatomic, retain) NSString *headerValue;
 
+-(id)initWithPair:(NSString *) header withValue:(NSString *) value;
+
 @end

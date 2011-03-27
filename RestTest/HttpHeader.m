@@ -23,6 +23,13 @@
     return self;
 }
 
+-(id)initWithPair:(NSString *) header withValue:(NSString *) value {
+    [self init];
+    self.headerName = header;
+    self.headerValue = value;
+    return self;
+}
+
 - (void)dealloc
 {
     [super dealloc];

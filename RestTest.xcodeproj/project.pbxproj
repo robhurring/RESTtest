@@ -7,26 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D325BD5133ED96D00283DC0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D325BD4133ED96D00283DC0 /* Icon.png */; };
+		9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DBA1B3A133EE47E00569286 /* RESTtestHelp */; };
 		C789304A132C6FEE00D76EC2 /* HttpHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7893049132C6FEE00D76EC2 /* HttpHeader.m */; };
 		C78F43E51330613C0062BAE3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C78F43E41330613C0062BAE3 /* Credits.rtf */; };
-		C78F43FA133072890062BAE3 /* Help.helpindex in Resources */ = {isa = PBXBuildFile; fileRef = C78F43F8133072890062BAE3 /* Help.helpindex */; };
-		C78F43FB133072890062BAE3 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C78F43F9133072890062BAE3 /* index.html */; };
 		C7FBBA82132C623300C301D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FBBA81132C623300C301D7 /* Cocoa.framework */; };
 		C7FBBA8C132C623300C301D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7FBBA8A132C623300C301D7 /* InfoPlist.strings */; };
 		C7FBBA8F132C623300C301D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBBA8E132C623300C301D7 /* main.m */; };
-		C7FBBA92132C623400C301D7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C7FBBA90132C623300C301D7 /* Credits.rtf */; };
 		C7FBBA95132C623400C301D7 /* RestTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBBA94132C623400C301D7 /* RestTestAppDelegate.m */; };
 		C7FBBA98132C623400C301D7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FBBA96132C623400C301D7 /* MainMenu.xib */; };
 		C7FBBAA6132C657300C301D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBBAA4132C657300C301D7 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D325BD4133ED96D00283DC0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9DBA1B33133EE0FC00569286 /* RESTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DBA1B3A133EE47E00569286 /* RESTtestHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RESTtestHelp; sourceTree = "<group>"; };
 		C7893048132C6FEE00D76EC2 /* HttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpHeader.h; sourceTree = "<group>"; };
 		C7893049132C6FEE00D76EC2 /* HttpHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpHeader.m; sourceTree = "<group>"; };
 		C78F43E41330613C0062BAE3 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		C78F43F8133072890062BAE3 /* Help.helpindex */ = {isa = PBXFileReference; lastKnownFileType = file; path = Help.helpindex; sourceTree = "<group>"; };
-		C78F43F9133072890062BAE3 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		C7FBBA7D132C623300C301D7 /* RestTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FBBA81132C623300C301D7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C7FBBA84132C623300C301D7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C7FBBA85132C623300C301D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -35,7 +34,6 @@
 		C7FBBA8B132C623300C301D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7FBBA8D132C623300C301D7 /* RestTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RestTest-Prefix.pch"; sourceTree = "<group>"; };
 		C7FBBA8E132C623300C301D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C7FBBA91132C623400C301D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		C7FBBA93132C623400C301D7 /* RestTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestTestAppDelegate.h; sourceTree = "<group>"; };
 		C7FBBA94132C623400C301D7 /* RestTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestTestAppDelegate.m; sourceTree = "<group>"; };
 		C7FBBA97132C623400C301D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -86,19 +84,11 @@
 		C78F43F6133072890062BAE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C78F43F7133072890062BAE3 /* RestTest.Help */,
+				9DBA1B3A133EE47E00569286 /* RESTtestHelp */,
+				9D325BD4133ED96D00283DC0 /* Icon.png */,
 			);
 			name = Resources;
 			path = RestTest/Resources;
-			sourceTree = "<group>";
-		};
-		C78F43F7133072890062BAE3 /* RestTest.Help */ = {
-			isa = PBXGroup;
-			children = (
-				C78F43F8133072890062BAE3 /* Help.helpindex */,
-				C78F43F9133072890062BAE3 /* index.html */,
-			);
-			path = RestTest.Help;
 			sourceTree = "<group>";
 		};
 		C7FBBA72132C623300C301D7 = {
@@ -114,7 +104,7 @@
 		C7FBBA7E132C623300C301D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7FBBA7D132C623300C301D7 /* RestTest.app */,
+				9DBA1B33133EE0FC00569286 /* RESTtest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,7 +147,6 @@
 				C7FBBA8A132C623300C301D7 /* InfoPlist.strings */,
 				C7FBBA8D132C623300C301D7 /* RestTest-Prefix.pch */,
 				C7FBBA8E132C623300C301D7 /* main.m */,
-				C7FBBA90132C623300C301D7 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7FBBA7C132C623300C301D7 /* RestTest */ = {
+		C7FBBA7C132C623300C301D7 /* RESTtest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7FBBA9B132C623400C301D7 /* Build configuration list for PBXNativeTarget "RestTest" */;
+			buildConfigurationList = C7FBBA9B132C623400C301D7 /* Build configuration list for PBXNativeTarget "RESTtest" */;
 			buildPhases = (
 				C7FBBA79132C623300C301D7 /* Sources */,
 				C7FBBA7A132C623300C301D7 /* Frameworks */,
@@ -177,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = RestTest;
+			name = RESTtest;
 			productName = RestTest;
-			productReference = C7FBBA7D132C623300C301D7 /* RestTest.app */;
+			productReference = 9DBA1B33133EE0FC00569286 /* RESTtest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7FBBA7C132C623300C301D7 /* RestTest */,
+				C7FBBA7C132C623300C301D7 /* RESTtest */,
 			);
 		};
 /* End PBXProject section */
@@ -210,11 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7FBBA8C132C623300C301D7 /* InfoPlist.strings in Resources */,
-				C7FBBA92132C623400C301D7 /* Credits.rtf in Resources */,
 				C7FBBA98132C623400C301D7 /* MainMenu.xib in Resources */,
 				C78F43E51330613C0062BAE3 /* Credits.rtf in Resources */,
-				C78F43FA133072890062BAE3 /* Help.helpindex in Resources */,
-				C78F43FB133072890062BAE3 /* index.html in Resources */,
+				9D325BD5133ED96D00283DC0 /* Icon.png in Resources */,
+				9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,14 +229,6 @@
 				C7FBBA8B132C623300C301D7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C7FBBA90132C623300C301D7 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C7FBBA91132C623400C301D7 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		C7FBBA96132C623400C301D7 /* MainMenu.xib */ = {
@@ -336,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7FBBA9B132C623400C301D7 /* Build configuration list for PBXNativeTarget "RestTest" */ = {
+		C7FBBA9B132C623400C301D7 /* Build configuration list for PBXNativeTarget "RESTtest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7FBBA9C132C623400C301D7 /* Debug */,
