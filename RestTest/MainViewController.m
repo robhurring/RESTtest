@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "HttpHeader.h"
+#import "RestTestAppDelegate.h"
 
 @implementation MainViewController
 
@@ -178,11 +179,37 @@
     NSSavePanel *save = [NSSavePanel savePanel];
     NSInteger result = [save runModal];
     if (result == NSOKButton){
-        NSString *selectedFile = [save filename];      
-        NSData *fileData = [[httpResponse string] dataUsingEncoding:NSUTF8StringEncoding];
-        [fileData writeToFile:selectedFile atomically:YES];        
+        NSString *selectedFile = [save filename];
+        NSString *output = @""; 
+        if (responseHeadersArray != nil){
+            for (int i = 0; i < [responseHeadersArray count]; i++) {
+                NSString *key = [responseHeadersArray objectAtIndex:i];
+                NSString *obj = [responseHeaders objectForKey:key];
+                output = [output stringByAppendingFormat:@"%@: %@\n", key, obj];            
+            }
+            if ([responseHeadersArray count] > 0){
+                output = [output stringByAppendingString:@"\n"];  
+            }
+        }
+        output = [output stringByAppendingString:[httpResponse string]];
+        NSData *fileData = [output dataUsingEncoding:NSUTF8StringEncoding];
+        [fileData writeToFile:selectedFile atomically:YES];
+        
     }    
 }
+
+- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
+{
+    SEL theAction = [anItem action];
+    RestTestAppDelegate *delegate = (RestTestAppDelegate *)[[NSApplication sharedApplication] delegate];
+    
+    if (theAction == @selector(saveDocumentAs:))
+    {
+        return [[httpResponse string] length] > 0;            
+    }    
+    return [[delegate window] validateUserInterfaceItem:anItem];
+}
+
 
 -(IBAction) newDocument: (id)sender {
     [responseHeaders removeAllObjects];

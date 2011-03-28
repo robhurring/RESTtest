@@ -17,12 +17,13 @@
     // Insert code here to initialize your application
 }
 
--(void) performClose:(id)sender {
-    exit(0);
-}
-
 -(void) showHelp{
     
 }
+
+
+
+
+
 
 @end

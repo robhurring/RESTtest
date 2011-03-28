@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface MainViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate> {
+@interface MainViewController : NSWindowController<NSTableViewDataSource, NSTableViewDelegate> {
     IBOutlet NSTableView *headers;
     IBOutlet NSTextField *httpUri;
     IBOutlet NSComboBox *httpVerb;
@@ -35,5 +35,6 @@
 -(IBAction) sendRequest: (id) sender;
 -(IBAction) saveDocumentAs: (id)sender;
 -(IBAction) newDocument: (id)sender;
+- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
 
 @end

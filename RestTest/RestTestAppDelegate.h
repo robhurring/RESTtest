@@ -15,6 +15,5 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
--(void) performClose:(id)sender;
 
 @end
