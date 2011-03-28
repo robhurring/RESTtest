@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D325BD5133ED96D00283DC0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D325BD4133ED96D00283DC0 /* Icon.png */; };
 		9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DBA1B3A133EE47E00569286 /* RESTtestHelp */; };
 		9DD0404A133FE26E005C800B /* default.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9DD04049133FE26E005C800B /* default.icns */; };
 		C789304A132C6FEE00D76EC2 /* HttpHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7893049132C6FEE00D76EC2 /* HttpHeader.m */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D325BD4133ED96D00283DC0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9DBA1B33133EE0FC00569286 /* RESTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBA1B3A133EE47E00569286 /* RESTtestHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RESTtestHelp; sourceTree = "<group>"; };
 		9DD04049133FE26E005C800B /* default.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = default.icns; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			children = (
 				9DD04049133FE26E005C800B /* default.icns */,
 				9DBA1B3A133EE47E00569286 /* RESTtestHelp */,
-				9D325BD4133ED96D00283DC0 /* Icon.png */,
 			);
 			name = Resources;
 			path = RestTest/Resources;
@@ -204,7 +201,6 @@
 				C7FBBA8C132C623300C301D7 /* InfoPlist.strings in Resources */,
 				C7FBBA98132C623400C301D7 /* MainMenu.xib in Resources */,
 				C78F43E51330613C0062BAE3 /* Credits.rtf in Resources */,
-				9D325BD5133ED96D00283DC0 /* Icon.png in Resources */,
 				9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */,
 				9DD0404A133FE26E005C800B /* default.icns in Resources */,
 			);
