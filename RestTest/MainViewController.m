@@ -3,7 +3,7 @@
 //  RestTest
 //
 //  Created by Mondok, Matt (LNG-KOP) on 3/12/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 EdenTech. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -36,11 +36,14 @@
 }
 
 -(IBAction) addRow:(id)sender{
-    [headerRows addObject:[[HttpHeader alloc] init]];
+    HttpHeader *head = [[HttpHeader alloc] init];
+    [headerRows addObject:head];
+    [head release];
     [headers reloadData];
     NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:[headerRows count]-1];
     [headers selectRowIndexes:set byExtendingSelection:NO];
     [headers setNeedsDisplay];
+    [set release];
 }
 
 -(IBAction) deleteRow:(id)sender{
@@ -79,7 +82,7 @@
     
     // create the connection with the request
     // and start loading the data
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     if (theConnection) {
         // Create the NSMutableData to hold the received data.
         // receivedData is an instance variable declared elsewhere.
@@ -88,6 +91,7 @@
     } else {
         [httpResponse setString:@"Connection Failed"];
     }
+
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -107,8 +111,10 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     [connection release];
-    [httpResponse setString:[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding]];
+    NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    [httpResponse setString:recData];
     [receivedData release];
+    [recData release];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

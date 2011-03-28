@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D325BD5133ED96D00283DC0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D325BD4133ED96D00283DC0 /* Icon.png */; };
 		9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DBA1B3A133EE47E00569286 /* RESTtestHelp */; };
+		9DD0404A133FE26E005C800B /* default.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9DD04049133FE26E005C800B /* default.icns */; };
 		C789304A132C6FEE00D76EC2 /* HttpHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7893049132C6FEE00D76EC2 /* HttpHeader.m */; };
 		C78F43E51330613C0062BAE3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C78F43E41330613C0062BAE3 /* Credits.rtf */; };
 		C7FBBA82132C623300C301D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FBBA81132C623300C301D7 /* Cocoa.framework */; };
@@ -23,6 +24,7 @@
 		9D325BD4133ED96D00283DC0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9DBA1B33133EE0FC00569286 /* RESTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBA1B3A133EE47E00569286 /* RESTtestHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RESTtestHelp; sourceTree = "<group>"; };
+		9DD04049133FE26E005C800B /* default.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = default.icns; sourceTree = "<group>"; };
 		C7893048132C6FEE00D76EC2 /* HttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpHeader.h; sourceTree = "<group>"; };
 		C7893049132C6FEE00D76EC2 /* HttpHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpHeader.m; sourceTree = "<group>"; };
 		C78F43E41330613C0062BAE3 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		C78F43F6133072890062BAE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DD04049133FE26E005C800B /* default.icns */,
 				9DBA1B3A133EE47E00569286 /* RESTtestHelp */,
 				9D325BD4133ED96D00283DC0 /* Icon.png */,
 			);
@@ -203,6 +206,7 @@
 				C78F43E51330613C0062BAE3 /* Credits.rtf in Resources */,
 				9D325BD5133ED96D00283DC0 /* Icon.png in Resources */,
 				9DBA1B3B133EE47E00569286 /* RESTtestHelp in Resources */,
+				9DD0404A133FE26E005C800B /* default.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Matthew Mondok";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -293,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Matthew Mondok";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;

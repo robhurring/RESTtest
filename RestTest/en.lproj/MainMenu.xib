@@ -709,7 +709,7 @@
 						</object>
 						<object class="NSTextField" id="910400991">
 							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">303</int>
+							<int key="NSvFlags">270</int>
 							<string key="NSFrame">{{95, 573}, {478, 22}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
@@ -739,7 +739,7 @@
 						</object>
 						<object class="NSComboBox" id="739625577">
 							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">303</int>
+							<int key="NSvFlags">270</int>
 							<string key="NSFrame">{{95, 541}, {99, 26}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
