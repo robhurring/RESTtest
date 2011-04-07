@@ -15,6 +15,7 @@
     IBOutlet NSTextView *httpBody;    
     IBOutlet NSTextView *httpResponse;
     IBOutlet NSTableView *responseTable;
+    IBOutlet NSButton *sendButton;
     
     NSDictionary *initData;
     NSMutableDictionary *responseHeaders;

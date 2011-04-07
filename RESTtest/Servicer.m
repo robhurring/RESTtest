@@ -105,6 +105,7 @@
 }
 
 -(IBAction) sendRequest:(id)sender {
+    [sendButton setEnabled:NO];
     if (responseHeaders)
         [responseHeaders removeAllObjects];
     
@@ -128,7 +129,7 @@
         NSString *name = head.headerName;
         if (value.length == 0 || name.length == 0)
             continue;
-        [theRequest addValue:head.headerName forHTTPHeaderField:head.headerValue];
+        [theRequest addValue:head.headerValue forHTTPHeaderField:head.headerName];
     }
     
     // create the connection with the request
@@ -166,6 +167,7 @@
     [httpResponse setString:recData];
     [receivedData release];
     [recData release];
+    [sendButton setEnabled:YES];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -176,6 +178,7 @@
     [receivedData release];
     
     [httpResponse setString:[error localizedDescription]];
+    [sendButton setEnabled:YES];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView{
@@ -248,7 +251,12 @@
 }
 
 -(IBAction) saveDocument:(id)sender{
-    [self saveWithFileName:[[self fileURL] path]];
+    if ([self fileURL]){
+        [self saveWithFileName:[[self fileURL] path]];
+    }
+    else{
+        [self saveDocumentAs:sender];
+    }
 }
 
 -(IBAction) saveDocumentAs: (id)sender {
@@ -259,6 +267,7 @@
         [self saveWithFileName:selectedFile];
     }
 }
+
 
 -(void) saveWithFileName:(NSString *) fileName{
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -292,12 +301,6 @@
     {
         return [[httpResponse string] length] > 0;            
     }    
-    else if (theAction == @selector(saveDocument:)){
-        if ([self fileURL]) {
-            return YES;
-        }
-        return NO;
-    }
     return YES;
 }
 
