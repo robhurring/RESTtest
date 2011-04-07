@@ -1,15 +1,14 @@
 //
-//  MainViewController.h
-//  RestTest
+//  Servicer.h
+//  RESTtest
 //
-//  Created by Mondok, Matt (LNG-KOP) on 3/12/11.
+//  Created by Matthew Mondok on 4/6/11.
 //  Copyright 2011 EdenTech. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface MainViewController : NSWindowController<NSTableViewDataSource, NSTableViewDelegate> {
+@interface Servicer : NSDocument<NSTableViewDataSource, NSTableViewDelegate> {
     IBOutlet NSTableView *headers;
     IBOutlet NSTextField *httpUri;
     IBOutlet NSComboBox *httpVerb;
@@ -17,15 +16,14 @@
     IBOutlet NSTextView *httpResponse;
     IBOutlet NSTableView *responseTable;
     
+    NSDictionary *initData;
     NSMutableDictionary *responseHeaders;
     NSMutableArray *responseHeadersArray;
     NSMutableData *receivedData;
     NSURLResponse *theResponse;
     NSMutableArray *headerRows;
     NSURLConnection *theConnection;
-
 @private
-    
 }
 
 @property(nonatomic, retain) NSMutableArray *headerRows;
@@ -34,7 +32,8 @@
 -(IBAction) deleteRow:(id) sender;
 -(IBAction) sendRequest: (id) sender;
 -(IBAction) saveDocumentAs: (id)sender;
--(IBAction) newDocument: (id)sender;
-- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
+-(IBAction) saveResponseAs: (id)sender;
+-(void) saveWithFileName:(NSString *) fileName;
+//- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
 
 @end

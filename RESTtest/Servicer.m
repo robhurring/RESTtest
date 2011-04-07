@@ -1,39 +1,89 @@
 //
-//  MainViewController.m
-//  RestTest
+//  Servicer.m
+//  RESTtest
 //
-//  Created by Mondok, Matt (LNG-KOP) on 3/12/11.
+//  Created by Matthew Mondok on 4/6/11.
 //  Copyright 2011 EdenTech. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "Servicer.h"
 #import "HttpHeader.h"
-#import "RestTestAppDelegate.h"
 
-@implementation MainViewController
+@implementation Servicer
 
 @synthesize headerRows;
 
--(id) initWithCoder:(NSCoder *)aDecoder{
-    responseHeadersArray = [[NSMutableArray alloc] init];
-    headerRows = [[NSMutableArray alloc] initWithCapacity:10];
-    HttpHeader *head = [[HttpHeader alloc] initWithPair:@"Content-Type" withValue:@"text/html"];
-    [headerRows addObject:head];
-    [head release];
-    head = [[HttpHeader alloc] init];
-    [headerRows addObject:head];
-    [head release];
-    head = [[HttpHeader alloc] init];
-    [headerRows addObject:head];
-    [head release];
-    head = [[HttpHeader alloc] init];
-    [headerRows addObject:head];
-    [head release];
-    head = [[HttpHeader alloc] init];
-    [headerRows addObject:head];    
-    [head release];
-    receivedData = [[NSMutableData alloc] init];    
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        responseHeadersArray = [[NSMutableArray alloc] init];
+        headerRows = [[NSMutableArray alloc] initWithCapacity:10];
+        HttpHeader *head = [[HttpHeader alloc] initWithPair:@"Content-Type" withValue:@"text/html"];
+        [headerRows addObject:head];
+        [head release];
+        head = [[HttpHeader alloc] init];
+        [headerRows addObject:head];
+        [head release];
+        head = [[HttpHeader alloc] init];
+        [headerRows addObject:head];
+        [head release];
+        head = [[HttpHeader alloc] init];
+        [headerRows addObject:head];
+        [head release];
+        head = [[HttpHeader alloc] init];
+        [headerRows addObject:head];    
+        [head release];
+        receivedData = [[NSMutableData alloc] init];    
+        return self;
+    }
     return self;
+}
+
+- (NSString *)windowNibName
+{
+    return @"Servicer";
+}
+
+- (void)windowControllerDidLoadNib:(NSWindowController *)aController {
+    [super windowControllerDidLoadNib:aController];
+    if (initData){
+        [httpUri setStringValue:[initData objectForKey:@"httpUri"]];
+        [httpVerb selectItemWithObjectValue:[initData objectForKey:@"httpVerb"]];
+        [httpBody setString:[initData objectForKey:@"httpBody"]];
+        NSArray *heads = [initData objectForKey:@"headers"];
+        if (heads){
+            [headerRows removeAllObjects];
+            for(NSDictionary *d in heads){
+                HttpHeader *head = [[HttpHeader alloc] initWithPair:[d objectForKey:@"key"] withValue:[d objectForKey:@"value"]];
+                [headerRows addObject:head];
+                [head release];
+            }
+        }
+    } else{
+        [httpVerb selectItemAtIndex:0];
+    }
+}
+
+- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
+    if (outError) {
+        *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+    }
+    return nil;
+}
+
+- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
+    /*
+    Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
+    You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
+    */
+    NSString *error;  
+    NSPropertyListFormat format;  
+    initData = [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];  
+    if (outError) {
+        *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+    }
+    return YES;
 }
 
 -(IBAction) addRow:(id)sender{
@@ -92,7 +142,7 @@
     } else {
         [httpResponse setString:@"Connection Failed"];
     }
-
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -129,7 +179,7 @@
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView{
-        NSInteger tag = [aTableView tag];
+    NSInteger tag = [aTableView tag];
     if (tag == 0)
         return [headerRows count];
     else
@@ -175,7 +225,7 @@
     }    
 }
 
--(IBAction) saveDocumentAs: (id)sender {
+-(IBAction) saveResponseAs: (id)sender {
     NSSavePanel *save = [NSSavePanel savePanel];
     NSInteger result = [save runModal];
     if (result == NSOKButton){
@@ -193,44 +243,63 @@
         }
         output = [output stringByAppendingString:[httpResponse string]];
         NSData *fileData = [output dataUsingEncoding:NSUTF8StringEncoding];
-        [fileData writeToFile:selectedFile atomically:YES];
-        
+        [fileData writeToFile:selectedFile atomically:YES];        
     }    
 }
+
+-(IBAction) saveDocument:(id)sender{
+    [self saveWithFileName:[[self fileURL] path]];
+}
+
+-(IBAction) saveDocumentAs: (id)sender {
+    NSSavePanel *save = [NSSavePanel savePanel];
+    NSInteger result = [save runModal];
+    if (result == NSOKButton){
+        NSString *selectedFile = [[save filename] stringByAppendingString:@".rstst"];
+        [self saveWithFileName:selectedFile];
+    }
+}
+
+-(void) saveWithFileName:(NSString *) fileName{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[httpUri stringValue] forKey:@"httpUri"];
+    [dict setObject:[httpVerb stringValue] forKey:@"httpVerb"];
+    [dict setObject:[[httpBody textStorage] string] forKey:@"httpBody"];
+    NSMutableArray *headContents = [[NSMutableArray alloc] initWithCapacity:[headerRows count]];
+    for(HttpHeader *head in headerRows){
+        if (![head headerValue]){
+            continue;
+        }
+        NSMutableDictionary *temp = [[NSMutableDictionary alloc] initWithCapacity:2];
+        [temp setObject:[head headerValue] forKey:@"value"];
+        [temp setObject:[head headerName] forKey:@"key"];
+        [headContents addObject:temp];
+        [temp release];
+    }
+    [dict setObject:headContents forKey:@"headers"];
+    [dict writeToFile:fileName atomically:NO];
+    [self setFileURL:[NSURL URLWithString:fileName]];
+    [dict release];
+    [headContents release];
+}
+
 
 - (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
 {
     SEL theAction = [anItem action];
-    RestTestAppDelegate *delegate = (RestTestAppDelegate *)[[NSApplication sharedApplication] delegate];
     
-    if (theAction == @selector(saveDocumentAs:))
+    if (theAction == @selector(saveResponseAs:))
     {
         return [[httpResponse string] length] > 0;            
     }    
-    return [[delegate window] validateUserInterfaceItem:anItem];
+    else if (theAction == @selector(saveDocument:)){
+        if ([self fileURL]) {
+            return YES;
+        }
+        return NO;
+    }
+    return YES;
 }
 
-
--(IBAction) newDocument: (id)sender {
-    [responseHeaders removeAllObjects];
-    [responseHeadersArray removeAllObjects];
-    [headerRows removeAllObjects];
-    [httpUri setStringValue:@""];
-    [httpVerb selectItemAtIndex:0];
-    [httpBody setString:@""];
-    [httpResponse setString:@""];
-    [headers reloadData];
-    [responseTable reloadData];
-}
-
-- (void)dealloc
-{
-    [responseHeadersArray release];
-    [responseHeaders release];
-    [receivedData release];
-    [theResponse release];
-    [headerRows release];
-    [super dealloc];
-}
 
 @end
