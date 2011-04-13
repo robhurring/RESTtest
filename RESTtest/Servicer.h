@@ -29,6 +29,7 @@
 
 @property(nonatomic, retain) NSMutableArray *headerRows;
 
+-(IBAction) rowAction:(id) sender;
 -(IBAction) addRow:(id) sender;
 -(IBAction) deleteRow:(id) sender;
 -(IBAction) sendRequest: (id) sender;

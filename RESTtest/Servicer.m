@@ -86,6 +86,18 @@
     return YES;
 }
 
+-(IBAction) rowAction:(id) sender {
+    NSSegmentedControl *segment = (NSSegmentedControl *)sender;
+    
+    NSInteger tag =    [segment selectedSegment];
+    if (tag == 0){
+        [self addRow:sender];
+    }
+    else if (tag == 1){
+        [self deleteRow:sender];
+    }
+}
+
 -(IBAction) addRow:(id)sender{
     HttpHeader *head = [[HttpHeader alloc] init];
     [headerRows addObject:head];
