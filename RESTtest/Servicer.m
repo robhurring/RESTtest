@@ -196,7 +196,9 @@
 {
   [connection release];
   NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-  [httpResponse setString:recData];
+  if (recData){
+    [httpResponse setString:recData];
+  }
   [receivedData release];
   [recData release];
   [sendButton setEnabled:YES];
@@ -262,9 +264,12 @@
 
 -(IBAction) saveResponseAs: (id)sender {
   NSSavePanel *save = [NSSavePanel savePanel];
+  [save setExtensionHidden:NO];
+  [save setAllowedFileTypes:@[@"txt"]];
+  
   NSInteger result = [save runModal];
   if (result == NSOKButton){
-    NSString *selectedFile = [save filename];
+    NSURL *selectedFile = [save URL];
     NSString *output = @"";
     if (responseHeadersArray != nil){
       for (int i = 0; i < [responseHeadersArray count]; i++) {
@@ -278,13 +283,13 @@
     }
     output = [output stringByAppendingString:[httpResponse string]];
     NSData *fileData = [output dataUsingEncoding:NSUTF8StringEncoding];
-    [fileData writeToFile:selectedFile atomically:YES];
+    [fileData writeToURL:selectedFile atomically:YES];
   }
 }
 
 -(IBAction) saveDocument:(id)sender{
   if ([self fileURL]){
-    [self saveWithFileName:[[self fileURL] path]];
+    [self saveWithFileName:self.fileURL];
   }
   else{
     [self saveDocumentAs:sender];
@@ -293,15 +298,17 @@
 
 -(IBAction) saveDocumentAs: (id)sender {
   NSSavePanel *save = [NSSavePanel savePanel];
+  
+  [save setExtensionHidden:NO];
+  [save setAllowedFileTypes:@[@"rstst"]];
+
   NSInteger result = [save runModal];
   if (result == NSOKButton){
-    NSString *selectedFile = [[save filename] stringByAppendingString:@".rstst"];
-    [self saveWithFileName:selectedFile];
+    [self saveWithFileName:save.URL];
   }
 }
 
-
--(void) saveWithFileName:(NSString *) fileName{
+-(void) saveWithFileName:(NSURL *) fileName{
   NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
   [dict setObject:[httpUri stringValue] forKey:@"httpUri"];
   [dict setObject:[httpVerb stringValue] forKey:@"httpVerb"];
@@ -320,8 +327,9 @@
     [temp release];
   }
   [dict setObject:headContents forKey:@"headers"];
-  [dict writeToFile:fileName atomically:NO];
-  [self setFileURL:[NSURL URLWithString:fileName]];
+  
+  [dict writeToURL: fileName atomically:YES];
+  [self setFileURL: fileName];
   [dict release];
   [headContents release];
 }

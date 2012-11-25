@@ -37,7 +37,5 @@
 -(IBAction) sendRequest: (id) sender;
 -(IBAction) saveDocumentAs: (id)sender;
 -(IBAction) saveResponseAs: (id)sender;
--(void) saveWithFileName:(NSString *) fileName;
-//- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
-
+-(void) saveWithFileName:(NSURL *) fileName;
 @end
