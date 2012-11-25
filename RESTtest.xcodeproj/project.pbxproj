@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3E5F491662B2540064A39C /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 9D3E5F481662B2540064A39C /* Icon.iconset */; };
+		9D3E5F4B1662B38C0064A39C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9D3E5F4A1662B38C0064A39C /* Icon.icns */; };
 		9DDCF4DC134D4DCF00643F87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDCF4DB134D4DCF00643F87 /* Cocoa.framework */; };
 		9DDCF4E6134D4DD000643F87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF4E4134D4DD000643F87 /* InfoPlist.strings */; };
 		9DDCF4EF134D4DD000643F87 /* Servicer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCF4EE134D4DD000643F87 /* Servicer.m */; };
@@ -14,13 +16,14 @@
 		9DDCF4F5134D4DD000643F87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF4F3134D4DD000643F87 /* MainMenu.xib */; };
 		9DDCF517134D713600643F87 /* HttpHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCF516134D713600643F87 /* HttpHeader.m */; };
 		9DDCF51E134D718C00643F87 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF518134D718C00643F87 /* Credits.rtf */; };
-		9DDCF51F134D718C00643F87 /* default.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF519134D718C00643F87 /* default.icns */; };
 		9DDCF522134D718C00643F87 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF51D134D718C00643F87 /* RESTtestHelp */; };
 		9DDCF52A134D729000643F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCF527134D729000643F87 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D21E885134D730C00CF2C80 /* RESTtest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RESTtest-Info.plist"; sourceTree = "<group>"; };
+		9D3E5F481662B2540064A39C /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = Icon.iconset; path = SupportingFiles/Icon.iconset; sourceTree = "<group>"; };
+		9D3E5F4A1662B38C0064A39C /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = SupportingFiles/Icon.icns; sourceTree = "<group>"; };
 		9DDCF4D7134D4DCF00643F87 /* RESTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDCF4DB134D4DCF00643F87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9DDCF4DE134D4DCF00643F87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -34,7 +37,6 @@
 		9DDCF515134D713600643F87 /* HttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpHeader.h; path = Models/HttpHeader.h; sourceTree = "<group>"; };
 		9DDCF516134D713600643F87 /* HttpHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpHeader.m; path = Models/HttpHeader.m; sourceTree = "<group>"; };
 		9DDCF518134D718C00643F87 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = SupportingFiles/Credits.rtf; sourceTree = "<group>"; };
-		9DDCF519134D718C00643F87 /* default.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = default.icns; path = SupportingFiles/default.icns; sourceTree = "<group>"; };
 		9DDCF51D134D718C00643F87 /* RESTtestHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RESTtestHelp; path = SupportingFiles/RESTtestHelp; sourceTree = "<group>"; };
 		9DDCF527134D729000643F87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DDCF529134D729000643F87 /* RESTtest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RESTtest-Prefix.pch"; sourceTree = "<group>"; };
@@ -104,12 +106,13 @@
 		9DDCF4E2134D4DD000643F87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D3E5F4A1662B38C0064A39C /* Icon.icns */,
+				9D3E5F481662B2540064A39C /* Icon.iconset */,
 				9DDCF51D134D718C00643F87 /* RESTtestHelp */,
 				9DDCF518134D718C00643F87 /* Credits.rtf */,
 				9DDCF527134D729000643F87 /* main.m */,
 				9D21E885134D730C00CF2C80 /* RESTtest-Info.plist */,
 				9DDCF529134D729000643F87 /* RESTtest-Prefix.pch */,
-				9DDCF519134D718C00643F87 /* default.icns */,
 				9DDCF4E4134D4DD000643F87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -149,6 +152,9 @@
 /* Begin PBXProject section */
 		9DDCF4CE134D4DCF00643F87 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = 9DDCF4D1134D4DCF00643F87 /* Build configuration list for PBXProject "RESTtest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -175,8 +181,9 @@
 				9DDCF4F2134D4DD000643F87 /* Servicer.xib in Resources */,
 				9DDCF4F5134D4DD000643F87 /* MainMenu.xib in Resources */,
 				9DDCF51E134D718C00643F87 /* Credits.rtf in Resources */,
-				9DDCF51F134D718C00643F87 /* default.icns in Resources */,
 				9DDCF522134D718C00643F87 /* RESTtestHelp in Resources */,
+				9D3E5F491662B2540064A39C /* Icon.iconset in Resources */,
+				9D3E5F4B1662B38C0064A39C /* Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +266,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Matthew Mondok";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -267,6 +275,7 @@
 				GCC_PREFIX_HEADER = "RESTtest/RESTtest-Prefix.pch";
 				INFOPLIST_FILE = "RESTtest/RESTtest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -275,7 +284,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Matthew Mondok";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -283,6 +293,7 @@
 				GCC_PREFIX_HEADER = "RESTtest/RESTtest-Prefix.pch";
 				INFOPLIST_FILE = "RESTtest/RESTtest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
