@@ -8,6 +8,8 @@
 
 #import "Servicer.h"
 #import "HttpHeader.h"
+#import "SBJson.h"
+#import <Foundation/Foundation.h>
 
 @implementation Servicer
 
@@ -172,7 +174,6 @@
     [connection release];
     // receivedData is declared as a method instance elsewhere
     [receivedData release];
-    
     [httpResponse setString:@"HTTP Basic Authentication failed"];
     [sendButton setEnabled:YES];
   }
@@ -197,8 +198,31 @@
   [connection release];
   NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
   if (recData){
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    id object = [parser objectWithString:recData];
+    if (object) {
+      SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+      writer.humanReadable = YES;
+      [httpResponse setString:[writer stringWithObject:object]];
+      [writer release];
+      [parser release];
+      [object release];
+    }
+    else {
+      NSError *error;
+      NSXMLDocument *document = [[NSXMLDocument alloc] initWithXMLString:recData options:(NSXMLNodePrettyPrint) error:&error];
+      
+      if (!error){
+        [httpResponse setString:[document XMLStringWithOptions:NSXMLNodePrettyPrint]];
+      } else {
+        [httpResponse setString:recData];
+      }
+    }}
+  else{
     [httpResponse setString:recData];
   }
+  
+  
   [receivedData release];
   [recData release];
   [sendButton setEnabled:YES];
@@ -301,7 +325,7 @@
   
   [save setExtensionHidden:NO];
   [save setAllowedFileTypes:@[@"rstst"]];
-
+  
   NSInteger result = [save runModal];
   if (result == NSOKButton){
     [self saveWithFileName:save.URL];
