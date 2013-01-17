@@ -120,6 +120,7 @@
 }
 
 -(IBAction) sendRequest:(id)sender {
+  [httpResponseBodyLabel setStringValue:@"Response Body:"];
   [sendButton setEnabled:NO];
   if (responseHeaders)
     [responseHeaders removeAllObjects];
@@ -182,8 +183,10 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
   theResponse = response;
-  responseHeaders = [[NSMutableDictionary alloc] initWithDictionary: [(NSHTTPURLResponse *)response allHeaderFields]];
+  NSHTTPURLResponse *aResponse = (NSHTTPURLResponse *)response;
+  responseHeaders = [[NSMutableDictionary alloc] initWithDictionary: [aResponse allHeaderFields]];
   responseHeadersArray = [[NSMutableArray alloc] initWithArray:[responseHeaders allKeys]];
+  [httpResponseBodyLabel setStringValue:[NSString stringWithFormat:@"Response Body: (Status Code: %li)", aResponse.statusCode]];
   [responseTable reloadData];
   [receivedData setLength:0];
 }
