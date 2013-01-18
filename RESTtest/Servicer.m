@@ -120,7 +120,7 @@
 }
 
 -(IBAction) sendRequest:(id)sender {
-  [httpResponseBodyLabel setStringValue:@"Response Body:"];
+  [httpStatusCode setStringValue:@""];
   [sendButton setEnabled:NO];
   if (responseHeaders)
     [responseHeaders removeAllObjects];
@@ -186,7 +186,8 @@
   NSHTTPURLResponse *aResponse = (NSHTTPURLResponse *)response;
   responseHeaders = [[NSMutableDictionary alloc] initWithDictionary: [aResponse allHeaderFields]];
   responseHeadersArray = [[NSMutableArray alloc] initWithArray:[responseHeaders allKeys]];
-  [httpResponseBodyLabel setStringValue:[NSString stringWithFormat:@"Response Body: (Status Code: %li)", aResponse.statusCode]];
+  statusCode = aResponse.statusCode;
+  [httpStatusCode setStringValue:[NSString stringWithFormat:@"Status Code: %li", statusCode]];
   [responseTable reloadData];
   [receivedData setLength:0];
 }
@@ -296,8 +297,11 @@
   
   NSInteger result = [save runModal];
   if (result == NSOKButton){
-    NSURL *selectedFile = [save URL];
     NSString *output = @"";
+    NSURL *selectedFile = [save URL];
+    if (statusCode > 0){
+      output = [NSString stringWithFormat:@"Status Code: %li\n", statusCode];
+    }
     if (responseHeadersArray != nil){
       for (int i = 0; i < [responseHeadersArray count]; i++) {
         NSString *key = [responseHeadersArray objectAtIndex:i];

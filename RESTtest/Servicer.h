@@ -18,8 +18,9 @@
     IBOutlet NSButton *sendButton;
     IBOutlet NSTextField *httpBasicPassword;    
     IBOutlet NSTextField *httpBasicUsername;
-    IBOutlet NSTextField *httpResponseBodyLabel;
+    IBOutlet NSTextField *httpStatusCode;
   
+    long statusCode;
     NSDictionary *initData;
     NSMutableDictionary *responseHeaders;
     NSMutableArray *responseHeadersArray;
