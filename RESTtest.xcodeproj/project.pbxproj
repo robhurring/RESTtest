@@ -31,6 +31,7 @@
 		9DDCF51E134D718C00643F87 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF518134D718C00643F87 /* Credits.rtf */; };
 		9DDCF522134D718C00643F87 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF51D134D718C00643F87 /* RESTtestHelp */; };
 		9DDCF52A134D729000643F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCF527134D729000643F87 /* main.m */; };
+		9DE590E116C6A10D00F751F3 /* RESTtest.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 9D50DFE91662CA8C006D4746 /* RESTtest.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE590E116C6A10D00F751F3 /* RESTtest.entitlements in Resources */,
 				9DDCF4E6134D4DD000643F87 /* InfoPlist.strings in Resources */,
 				9DDCF4F2134D4DD000643F87 /* Servicer.xib in Resources */,
 				9DDCF4F5134D4DD000643F87 /* MainMenu.xib in Resources */,
@@ -364,7 +366,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = RESTtest/RESTtest.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -383,7 +385,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = RESTtest/RESTtest.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
