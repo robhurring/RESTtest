@@ -120,48 +120,63 @@
 }
 
 -(IBAction) sendRequest:(id)sender {
-  [httpStatusCode setStringValue:@""];
-  [sendButton setEnabled:NO];
-  if (responseHeaders)
-    [responseHeaders removeAllObjects];
-  
-  [responseHeadersArray removeAllObjects];
-  NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[httpUri stringValue]]
-                                                          cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                      timeoutInterval:60.0];
-  NSString *method = [httpVerb stringValue];
-  if ([method length] == 0)
-    method = @"GET";
-  
-  NSData *body = [[[httpBody textStorage] string] dataUsingEncoding:NSUTF8StringEncoding];
-  [theRequest setHTTPBody:body];
-  [theRequest setHTTPMethod:method];
-  NSNumber *numb = [NSNumber numberWithUnsignedLong:body.length];
-  NSString *msgLength = [NSString stringWithFormat:@"%d", numb.intValue];
-  [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-  
-  
-  for (int i = 0; i < [headerRows count]; i++) {
-    HttpHeader *head = [headerRows objectAtIndex:i];
-    NSString *value = head.headerValue;
-    NSString *name = head.headerName;
-    if (value.length == 0 || name.length == 0)
-      continue;
-    [theRequest addValue:head.headerValue forHTTPHeaderField:head.headerName];
-  }
-  
-  // create the connection with the request
-  // and start loading the data
-  theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-  if (theConnection) {
-    // Create the NSMutableData to hold the received data.
-    // receivedData is an instance variable declared elsewhere.
-    receivedData = [[NSMutableData data] retain];
+  @try {
+    [httpStatusCode setStringValue:@""];
+    [httpResponse setString:@""];
+    [sendButton setEnabled:NO];
+    if (responseHeaders)
+      [responseHeaders removeAllObjects];
     
-  } else {
-    [httpResponse setString:@"Connection Failed"];
+    [responseHeadersArray removeAllObjects];
+    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[httpUri stringValue]]
+                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                        timeoutInterval:60.0];
+    NSString *method = [httpVerb stringValue];
+    if ([method length] == 0)
+      method = @"GET";
+    
+    NSData *body = [[[httpBody textStorage] string] dataUsingEncoding:NSUTF8StringEncoding];
+    [theRequest setHTTPBody:body];
+    [theRequest setHTTPMethod:method];
+    NSNumber *numb = [NSNumber numberWithUnsignedLong:body.length];
+    NSString *msgLength = [NSString stringWithFormat:@"%d", numb.intValue];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    
+    
+    for (int i = 0; i < [headerRows count]; i++) {
+      HttpHeader *head = [headerRows objectAtIndex:i];
+      NSString *value = head.headerValue;
+      NSString *name = head.headerName;
+      if (value.length == 0 || name.length == 0)
+        continue;
+      [theRequest addValue:head.headerValue forHTTPHeaderField:head.headerName];
+    }
+    
+    // create the connection with the request
+    // and start loading the data
+    theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    if (theConnection) {
+      // Create the NSMutableData to hold the received data.
+      // receivedData is an instance variable declared elsewhere.
+      receivedData = [[NSMutableData data] retain];
+      
+    } else {
+      [self showErrorAlert:@"Connection failed"];
+    }
   }
-  
+  @catch (NSException *exception) {
+    [self showErrorAlert:[exception description]];
+    [sendButton setEnabled:YES];
+  }
+  @finally {
+    theConnection = nil;
+  }
+}
+
+-(void) showErrorAlert:(NSString *)message{
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  [alert setMessageText:message];
+  [alert runModal];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
@@ -201,46 +216,55 @@
 {
   [connection release];
   NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-  if (recData){
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    id object = [parser objectWithString:recData];
-    if (object) {
-      SBJsonWriter *writer = [[SBJsonWriter alloc] init];
-      writer.humanReadable = YES;
-      [httpResponse setString:[writer stringWithObject:object]];
-      [writer release];
-      [parser release];
-      [object release];
-    }
-    else {
-      NSError *error;
-      NSXMLDocument *document = [[NSXMLDocument alloc] initWithXMLString:recData options:(NSXMLNodePrettyPrint) error:&error];
-      
-      if (!error){
-        [httpResponse setString:[document XMLStringWithOptions:NSXMLNodePrettyPrint]];
-      } else {
-        [httpResponse setString:recData];
+  @try {
+    if (recData && [recData length] > 0){
+      SBJsonParser *parser = [[SBJsonParser alloc] init];
+      id object = [parser objectWithString:recData];
+      if (object) {
+        SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+        writer.humanReadable = YES;
+        [httpResponse setString:[writer stringWithObject:object]];
+        [writer release];
+        [parser release];
+        [object release];
       }
-    }}
-  else{
-    [httpResponse setString:recData];
+      else {
+        NSError *error;
+        NSXMLDocument *document = [[NSXMLDocument alloc] initWithXMLString:recData options:(NSXMLNodePrettyPrint) error:&error];
+        
+        if (!error){
+          [httpResponse setString:[document XMLStringWithOptions:NSXMLNodePrettyPrint]];
+        } else {
+          [self showErrorAlert:recData];
+        }
+      }}
+    else{
+      if (recData.length > 0){
+        [httpResponse setString:recData];
+      } else {
+        [httpResponse setString:@""];
+      }
+    }
   }
-  
-  
-  [receivedData release];
-  [recData release];
-  [sendButton setEnabled:YES];
+  @catch (NSException *exception) {
+    [self showErrorAlert:[exception description]];
+  }
+  @finally {
+    [sendButton setEnabled:YES];
+    [receivedData release];
+    [recData release];
+  }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+  [sendButton setEnabled:YES];
+  [self showErrorAlert:[error localizedDescription]];
   // release the connection, and the data object
   [connection release];
   // receivedData is declared as a method instance elsewhere
   [receivedData release];
-  
-  [httpResponse setString:[error localizedDescription]];
-  [sendButton setEnabled:YES];
+
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView{
@@ -264,14 +288,24 @@
     }
   }
   if (tag == 1){
-    NSString *key = [responseHeadersArray objectAtIndex:rowIndex];
-    NSString *label = (NSString *)[aTableColumn identifier];
-    if ([label isEqualToString:@"0"]){
-      return key;
+    @try {
+      if (responseHeadersArray.count == 0) return @"";
+      
+      NSString *key = [responseHeadersArray objectAtIndex:rowIndex];
+      NSString *label = (NSString *)[aTableColumn identifier];
+      if ([label isEqualToString:@"0"]){
+        return key;
+      }
+      else {
+        return [responseHeaders objectForKey:key];
+      }
     }
-    else {
-      return [responseHeaders objectForKey:key];
+    @catch (NSException *exception) {
+      return @"";
     }
+    @finally {      
+    }
+
   }
   return nil;
 }
