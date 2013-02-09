@@ -154,13 +154,11 @@
     
     // create the connection with the request
     // and start loading the data
+    receivedData = [[NSMutableData data] retain];
+    [receivedData setLength:0];
+    
     theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    if (theConnection) {
-      // Create the NSMutableData to hold the received data.
-      // receivedData is an instance variable declared elsewhere.
-      receivedData = [[NSMutableData data] retain];
-      
-    } else {
+    if (!theConnection) {
       [self showErrorAlert:@"Connection failed"];
     }
   }
@@ -197,6 +195,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+  [httpResponse setString:@""];
   theResponse = response;
   NSHTTPURLResponse *aResponse = (NSHTTPURLResponse *)response;
   responseHeaders = [[NSMutableDictionary alloc] initWithDictionary: [aResponse allHeaderFields]];
@@ -215,7 +214,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
   [connection release];
-  NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+  NSString *recData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];  
   @try {
     if (recData && [recData length] > 0){
       SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -223,6 +222,7 @@
       if (object) {
         SBJsonWriter *writer = [[SBJsonWriter alloc] init];
         writer.humanReadable = YES;
+        [httpResponse setString:@""];
         [httpResponse setString:[writer stringWithObject:object]];
         [writer release];
         [parser release];
@@ -235,7 +235,7 @@
         if (!error){
           [httpResponse setString:[document XMLStringWithOptions:NSXMLNodePrettyPrint]];
         } else {
-          [self showErrorAlert:recData];
+          [httpResponse setString:recData];
         }
       }}
     else{
@@ -252,7 +252,11 @@
   @finally {
     [sendButton setEnabled:YES];
     [receivedData release];
+    [theConnection release];
     [recData release];
+    receivedData = nil;
+    recData = nil;
+    theConnection = nil;
   }
 }
 
