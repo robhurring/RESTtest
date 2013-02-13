@@ -7,19 +7,25 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class NoodleLineNumberView;
 
 @interface Servicer : NSDocument<NSTableViewDataSource, NSTableViewDelegate> {
     IBOutlet NSTableView *headers;
     IBOutlet NSTextField *httpUri;
     IBOutlet NSComboBox *httpVerb;
-    IBOutlet NSTextView *httpBody;    
+    IBOutlet NSTextView *httpBody;
+    IBOutlet NSScrollView *httpBodyScrollView;
     IBOutlet NSTextView *httpResponse;
+    IBOutlet NSScrollView *httpResponseScrollView;
     IBOutlet NSTableView *responseTable;
     IBOutlet NSButton *sendButton;
     IBOutlet NSTextField *httpBasicPassword;    
     IBOutlet NSTextField *httpBasicUsername;
     IBOutlet NSTextField *httpStatusCode;
   
+    NoodleLineNumberView	*httpBodyLineNumberView;
+    NoodleLineNumberView	*httpResponseLineNumberView;
+
     long statusCode;
     NSDictionary *initData;
     NSMutableDictionary *responseHeaders;

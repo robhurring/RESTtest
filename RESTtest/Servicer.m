@@ -10,6 +10,8 @@
 #import "HttpHeader.h"
 #import "SBJson.h"
 #import <Foundation/Foundation.h>
+#import "NoodleLineNumberView.h"
+#import "NoodleLineNumberMarker.h"
 
 @implementation Servicer
 
@@ -36,7 +38,7 @@
     head = [[HttpHeader alloc] init];
     [headerRows addObject:head];
     [head release];
-    receivedData = [[NSMutableData alloc] init];
+    receivedData = [[NSMutableData alloc] init];      
     return self;
   }
   return self;
@@ -54,6 +56,7 @@
     [httpVerb selectItemWithObjectValue:[initData objectForKey:@"httpVerb"]];
     [httpBody setString:[initData objectForKey:@"httpBody"]];
     [httpBasicUsername setStringValue:[initData objectForKey:@"httpBasicUsername"]];
+    
     NSArray *heads = [initData objectForKey:@"headers"];
     if (heads){
       [headerRows removeAllObjects];
@@ -66,6 +69,20 @@
   } else{
     [httpVerb selectItemAtIndex:0];
   }
+  
+  NSFont *defaultTextViewFont = [NSFont fontWithName:@"Menlo" size:12.0];
+  httpBody.font = defaultTextViewFont;
+  httpResponse.font = defaultTextViewFont;
+
+  httpBodyLineNumberView = [[NoodleLineNumberView alloc] initWithScrollView:httpBodyScrollView];
+  httpBodyScrollView.verticalRulerView = httpBodyLineNumberView;
+  httpBodyScrollView.hasVerticalRuler = YES;
+  httpBodyScrollView.rulersVisible = YES;
+
+  httpResponseLineNumberView = [[NoodleLineNumberView alloc] initWithScrollView:httpResponseScrollView];
+  httpResponseScrollView.verticalRulerView = httpResponseLineNumberView;
+  httpResponseScrollView.hasVerticalRuler = YES;
+  httpResponseScrollView.rulersVisible = YES;
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {

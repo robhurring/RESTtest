@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12C60</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">2840</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -110,7 +110,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{471, 105}</string>
 											<reference key="NSSuperview" ref="406416770"/>
-											<reference key="NSNextKeyView" ref="1015965448"/>
+											<reference key="NSNextKeyView" ref="943704460"/>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -285,7 +285,7 @@
 							</object>
 							<string key="NSFrame">{{20, 375}, {473, 123}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="406416770"/>
+							<reference key="NSNextKeyView" ref="1015965448"/>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="943704460"/>
 							<reference key="NSHScroller" ref="951187452"/>
@@ -533,7 +533,7 @@
 											<int key="NSvFlags">2322</int>
 											<string key="NSFrameSize">{377, 309}</string>
 											<reference key="NSSuperview" ref="115649114"/>
-											<reference key="NSNextKeyView" ref="192267259"/>
+											<reference key="NSNextKeyView" ref="905407066"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="565777342">
 												<object class="NSLayoutManager" key="NSLayoutManager">
 													<object class="NSTextStorage" key="NSTextStorage">
@@ -778,7 +778,7 @@ wGw</bytes>
 								</object>
 								<object class="NSScroller" id="905407066">
 									<reference key="NSNextResponder" ref="963185441"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{456, 1}, {16, 309}}</string>
 									<reference key="NSSuperview" ref="963185441"/>
 									<reference key="NSNextKeyView" ref="942611536"/>
@@ -791,7 +791,7 @@ wGw</bytes>
 								<object class="NSScroller" id="192267259">
 									<reference key="NSNextResponder" ref="963185441"/>
 									<int key="NSvFlags">-2147483392</int>
-									<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
+									<string key="NSFrame">{{-100, -100}, {471, 16}}</string>
 									<reference key="NSSuperview" ref="963185441"/>
 									<reference key="NSNextKeyView" ref="115649114"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -804,8 +804,8 @@ wGw</bytes>
 							</object>
 							<string key="NSFrame">{{20, 15}, {473, 311}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="115649114"/>
-							<int key="NSsFlags">133138</int>
+							<reference key="NSNextKeyView" ref="192267259"/>
+							<int key="NSsFlags">166418</int>
 							<reference key="NSVScroller" ref="905407066"/>
 							<reference key="NSHScroller" ref="192267259"/>
 							<reference key="NSContentView" ref="115649114"/>
@@ -850,7 +850,7 @@ wGw</bytes>
 											<int key="NSvFlags">2322</int>
 											<string key="NSFrameSize">{471, 407}</string>
 											<reference key="NSSuperview" ref="474741118"/>
-											<reference key="NSNextKeyView" ref="334110904"/>
+											<reference key="NSNextKeyView" ref="286784083"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="166416226">
 												<object class="NSLayoutManager" key="NSLayoutManager">
 													<object class="NSTextStorage" key="NSTextStorage">
@@ -948,7 +948,7 @@ wGw</bytes>
 							</object>
 							<string key="NSFrame">{{539, 15}, {473, 409}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="474741118"/>
+							<reference key="NSNextKeyView" ref="334110904"/>
 							<int key="NSsFlags">133138</int>
 							<reference key="NSVScroller" ref="286784083"/>
 							<reference key="NSHScroller" ref="334110904"/>
@@ -962,7 +962,7 @@ wGw</bytes>
 							<int key="NSvFlags">271</int>
 							<string key="NSFrame">{{536, 426}, {190, 17}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="688287107"/>
+							<reference key="NSNextKeyView" ref="916495218"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="522302704">
 								<int key="NSCellFlags">68157504</int>
@@ -985,6 +985,7 @@ wGw</bytes>
 							<int key="NSvFlags">271</int>
 							<string key="NSFrame">{{825, 426}, {190, 17}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSNextKeyView" ref="688287107"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="340601216">
 								<int key="NSCellFlags">68157504</int>
@@ -1033,7 +1034,7 @@ wGw</bytes>
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{471, 147}</string>
 											<reference key="NSSuperview" ref="290838856"/>
-											<reference key="NSNextKeyView" ref="228981190"/>
+											<reference key="NSNextKeyView" ref="192698788"/>
 											<int key="NSTag">1</int>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1177,7 +1178,7 @@ wGw</bytes>
 							</object>
 							<string key="NSFrame">{{539, 451}, {473, 165}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="290838856"/>
+							<reference key="NSNextKeyView" ref="228981190"/>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="192698788"/>
 							<reference key="NSHScroller" ref="146783271"/>
@@ -1414,6 +1415,22 @@ wGw</bytes>
 						<reference key="destination" ref="916495218"/>
 					</object>
 					<int key="connectionID">100110</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">httpBodyScrollView</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="963185441"/>
+					</object>
+					<int key="connectionID">100111</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">httpResponseScrollView</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="800834733"/>
+					</object>
+					<int key="connectionID">100112</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1969,6 +1986,7 @@ wGw</bytes>
 					<string>100049.IBPluginDependency</string>
 					<string>100050.IBPluginDependency</string>
 					<string>100051.IBPluginDependency</string>
+					<string>100051.notes</string>
 					<string>100052.IBPluginDependency</string>
 					<string>100053.IBPluginDependency</string>
 					<string>100054.IBPluginDependency</string>
@@ -2083,6 +2101,11 @@ wGw</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableAttributedString">
+						<object class="NSMutableString" key="NSString">
+							<characters key="NS.bytes"/>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2140,7 +2163,7 @@ wGw</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100110</int>
+			<int key="maxID">100112</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

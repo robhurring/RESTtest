@@ -32,7 +32,47 @@
 		9DDCF522134D718C00643F87 /* RESTtestHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCF51D134D718C00643F87 /* RESTtestHelp */; };
 		9DDCF52A134D729000643F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCF527134D729000643F87 /* main.m */; };
 		9DE590E116C6A10D00F751F3 /* RESTtest.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 9D50DFE91662CA8C006D4746 /* RESTtest.entitlements */; };
+		D4B4892416CC36290095D359 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDCF4DB134D4DCF00643F87 /* Cocoa.framework */; };
+		D4B4892A16CC36290095D359 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4B4892816CC36290095D359 /* InfoPlist.strings */; };
+		D4B4892E16CC36290095D359 /* NoodleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4892D16CC36290095D359 /* NoodleKit.m */; };
+		D4B4894E16CC36430095D359 /* NSObject-NoodlePerformWhenIdle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893416CC36430095D359 /* NSObject-NoodlePerformWhenIdle.m */; };
+		D4B4895016CC36430095D359 /* NSIndexSet-NoodleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893616CC36430095D359 /* NSIndexSet-NoodleExtensions.m */; };
+		D4B4895216CC36430095D359 /* NSResponder-NoodleModalExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893816CC36430095D359 /* NSResponder-NoodleModalExtensions.m */; };
+		D4B4895416CC36430095D359 /* NSTimer-NoodleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893A16CC36430095D359 /* NSTimer-NoodleExtensions.m */; };
+		D4B4895616CC36430095D359 /* NoodleGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893C16CC36430095D359 /* NoodleGlue.m */; };
+		D4B4895816CC36430095D359 /* NSImage-NoodleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4893E16CC36430095D359 /* NSImage-NoodleExtensions.m */; };
+		D4B4895A16CC36430095D359 /* NoodleCustomImageRep.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894016CC36430095D359 /* NoodleCustomImageRep.m */; };
+		D4B4895C16CC36430095D359 /* NSWindow-NoodleEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894216CC36430095D359 /* NSWindow-NoodleEffects.m */; };
+		D4B4895E16CC36430095D359 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894416CC36430095D359 /* NoodleLineNumberMarker.m */; };
+		D4B4896016CC36430095D359 /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894616CC36430095D359 /* NoodleLineNumberView.m */; };
+		D4B4896216CC36430095D359 /* NSTableView-NoodleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894816CC36430095D359 /* NSTableView-NoodleExtensions.m */; };
+		D4B4896416CC36430095D359 /* NoodleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894A16CC36430095D359 /* NoodleTableView.m */; };
+		D4B4896616CC36430095D359 /* NoodleIPhoneTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4894C16CC36430095D359 /* NoodleIPhoneTableView.m */; };
+		D4B4898E16CC36A00095D359 /* NSObject-NoodlePerformWhenIdle.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893316CC36430095D359 /* NSObject-NoodlePerformWhenIdle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4898F16CC36A00095D359 /* NSIndexSet-NoodleExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893516CC36430095D359 /* NSIndexSet-NoodleExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899016CC36A00095D359 /* NSResponder-NoodleModalExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893716CC36430095D359 /* NSResponder-NoodleModalExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899116CC36A00095D359 /* NSTimer-NoodleExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893916CC36430095D359 /* NSTimer-NoodleExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899216CC36A00095D359 /* NoodleGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893B16CC36430095D359 /* NoodleGlue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899316CC36A00095D359 /* NSImage-NoodleExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893D16CC36430095D359 /* NSImage-NoodleExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899416CC36A00095D359 /* NoodleCustomImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4893F16CC36430095D359 /* NoodleCustomImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899516CC36A00095D359 /* NSWindow-NoodleEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894116CC36430095D359 /* NSWindow-NoodleEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899616CC36A00095D359 /* NoodleLineNumberMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894316CC36430095D359 /* NoodleLineNumberMarker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899716CC36A00095D359 /* NoodleLineNumberView.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894516CC36430095D359 /* NoodleLineNumberView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899816CC36A00095D359 /* NSTableView-NoodleExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894716CC36430095D359 /* NSTableView-NoodleExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899916CC36A00095D359 /* NoodleTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894916CC36430095D359 /* NoodleTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899A16CC36A00095D359 /* NoodleIPhoneTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B4894B16CC36430095D359 /* NoodleIPhoneTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B4899D16CC37BA0095D359 /* NoodleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B4892316CC36290095D359 /* NoodleKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4B4899B16CC37B40095D359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DDCF4CE134D4DCF00643F87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B4892216CC36280095D359;
+			remoteInfo = NoodleKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9D21E885134D730C00CF2C80 /* RESTtest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RESTtest-Info.plist"; sourceTree = "<group>"; };
@@ -80,6 +120,38 @@
 		9DDCF51D134D718C00643F87 /* RESTtestHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RESTtestHelp; path = SupportingFiles/RESTtestHelp; sourceTree = "<group>"; };
 		9DDCF527134D729000643F87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DDCF529134D729000643F87 /* RESTtest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RESTtest-Prefix.pch"; sourceTree = "<group>"; };
+		D4B4892316CC36290095D359 /* NoodleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoodleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B4892716CC36290095D359 /* NoodleKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoodleKit-Info.plist"; sourceTree = "<group>"; };
+		D4B4892916CC36290095D359 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4B4892B16CC36290095D359 /* NoodleKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoodleKit-Prefix.pch"; sourceTree = "<group>"; };
+		D4B4892C16CC36290095D359 /* NoodleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoodleKit.h; sourceTree = "<group>"; };
+		D4B4892D16CC36290095D359 /* NoodleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoodleKit.m; sourceTree = "<group>"; };
+		D4B4893316CC36430095D359 /* NSObject-NoodlePerformWhenIdle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-NoodlePerformWhenIdle.h"; sourceTree = "<group>"; };
+		D4B4893416CC36430095D359 /* NSObject-NoodlePerformWhenIdle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject-NoodlePerformWhenIdle.m"; sourceTree = "<group>"; };
+		D4B4893516CC36430095D359 /* NSIndexSet-NoodleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet-NoodleExtensions.h"; sourceTree = "<group>"; };
+		D4B4893616CC36430095D359 /* NSIndexSet-NoodleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet-NoodleExtensions.m"; sourceTree = "<group>"; };
+		D4B4893716CC36430095D359 /* NSResponder-NoodleModalExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSResponder-NoodleModalExtensions.h"; sourceTree = "<group>"; };
+		D4B4893816CC36430095D359 /* NSResponder-NoodleModalExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSResponder-NoodleModalExtensions.m"; sourceTree = "<group>"; };
+		D4B4893916CC36430095D359 /* NSTimer-NoodleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer-NoodleExtensions.h"; sourceTree = "<group>"; };
+		D4B4893A16CC36430095D359 /* NSTimer-NoodleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer-NoodleExtensions.m"; sourceTree = "<group>"; };
+		D4B4893B16CC36430095D359 /* NoodleGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleGlue.h; sourceTree = "<group>"; };
+		D4B4893C16CC36430095D359 /* NoodleGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleGlue.m; sourceTree = "<group>"; };
+		D4B4893D16CC36430095D359 /* NSImage-NoodleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-NoodleExtensions.h"; sourceTree = "<group>"; };
+		D4B4893E16CC36430095D359 /* NSImage-NoodleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage-NoodleExtensions.m"; sourceTree = "<group>"; };
+		D4B4893F16CC36430095D359 /* NoodleCustomImageRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleCustomImageRep.h; sourceTree = "<group>"; };
+		D4B4894016CC36430095D359 /* NoodleCustomImageRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleCustomImageRep.m; sourceTree = "<group>"; };
+		D4B4894116CC36430095D359 /* NSWindow-NoodleEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow-NoodleEffects.h"; sourceTree = "<group>"; };
+		D4B4894216CC36430095D359 /* NSWindow-NoodleEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow-NoodleEffects.m"; sourceTree = "<group>"; };
+		D4B4894316CC36430095D359 /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
+		D4B4894416CC36430095D359 /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
+		D4B4894516CC36430095D359 /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
+		D4B4894616CC36430095D359 /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
+		D4B4894716CC36430095D359 /* NSTableView-NoodleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableView-NoodleExtensions.h"; sourceTree = "<group>"; };
+		D4B4894816CC36430095D359 /* NSTableView-NoodleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableView-NoodleExtensions.m"; sourceTree = "<group>"; };
+		D4B4894916CC36430095D359 /* NoodleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleTableView.h; sourceTree = "<group>"; };
+		D4B4894A16CC36430095D359 /* NoodleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleTableView.m; sourceTree = "<group>"; };
+		D4B4894B16CC36430095D359 /* NoodleIPhoneTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleIPhoneTableView.h; sourceTree = "<group>"; };
+		D4B4894C16CC36430095D359 /* NoodleIPhoneTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleIPhoneTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +159,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B4899D16CC37BA0095D359 /* NoodleKit.framework in Frameworks */,
 				9DADE05D1662F246007FE9CD /* Foundation.framework in Frameworks */,
 				9DADE05C1662F17C007FE9CD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B4891F16CC36280095D359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B4892416CC36290095D359 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +179,7 @@
 		9D50DFEB1662E9A7006D4746 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D4B4893216CC36350095D359 /* NoodleKit */,
 				9D50DFEC1662E9AC006D4746 /* SBJSON */,
 			);
 			name = Lib;
@@ -139,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDCF4E1134D4DCF00643F87 /* RESTtest */,
+				D4B4892516CC36290095D359 /* NoodleKit */,
 				9DDCF4DA134D4DCF00643F87 /* Frameworks */,
 				9DDCF4D8134D4DCF00643F87 /* Products */,
 			);
@@ -148,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDCF4D7134D4DCF00643F87 /* RESTtest.app */,
+				D4B4892316CC36290095D359 /* NoodleKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,7 +294,83 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D4B4892516CC36290095D359 /* NoodleKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4892C16CC36290095D359 /* NoodleKit.h */,
+				D4B4892D16CC36290095D359 /* NoodleKit.m */,
+				D4B4892616CC36290095D359 /* Supporting Files */,
+			);
+			path = NoodleKit;
+			sourceTree = "<group>";
+		};
+		D4B4892616CC36290095D359 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4892716CC36290095D359 /* NoodleKit-Info.plist */,
+				D4B4892816CC36290095D359 /* InfoPlist.strings */,
+				D4B4892B16CC36290095D359 /* NoodleKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4B4893216CC36350095D359 /* NoodleKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4893316CC36430095D359 /* NSObject-NoodlePerformWhenIdle.h */,
+				D4B4893416CC36430095D359 /* NSObject-NoodlePerformWhenIdle.m */,
+				D4B4893516CC36430095D359 /* NSIndexSet-NoodleExtensions.h */,
+				D4B4893616CC36430095D359 /* NSIndexSet-NoodleExtensions.m */,
+				D4B4893716CC36430095D359 /* NSResponder-NoodleModalExtensions.h */,
+				D4B4893816CC36430095D359 /* NSResponder-NoodleModalExtensions.m */,
+				D4B4893916CC36430095D359 /* NSTimer-NoodleExtensions.h */,
+				D4B4893A16CC36430095D359 /* NSTimer-NoodleExtensions.m */,
+				D4B4893B16CC36430095D359 /* NoodleGlue.h */,
+				D4B4893C16CC36430095D359 /* NoodleGlue.m */,
+				D4B4893D16CC36430095D359 /* NSImage-NoodleExtensions.h */,
+				D4B4893E16CC36430095D359 /* NSImage-NoodleExtensions.m */,
+				D4B4893F16CC36430095D359 /* NoodleCustomImageRep.h */,
+				D4B4894016CC36430095D359 /* NoodleCustomImageRep.m */,
+				D4B4894116CC36430095D359 /* NSWindow-NoodleEffects.h */,
+				D4B4894216CC36430095D359 /* NSWindow-NoodleEffects.m */,
+				D4B4894316CC36430095D359 /* NoodleLineNumberMarker.h */,
+				D4B4894416CC36430095D359 /* NoodleLineNumberMarker.m */,
+				D4B4894516CC36430095D359 /* NoodleLineNumberView.h */,
+				D4B4894616CC36430095D359 /* NoodleLineNumberView.m */,
+				D4B4894716CC36430095D359 /* NSTableView-NoodleExtensions.h */,
+				D4B4894816CC36430095D359 /* NSTableView-NoodleExtensions.m */,
+				D4B4894916CC36430095D359 /* NoodleTableView.h */,
+				D4B4894A16CC36430095D359 /* NoodleTableView.m */,
+				D4B4894B16CC36430095D359 /* NoodleIPhoneTableView.h */,
+				D4B4894C16CC36430095D359 /* NoodleIPhoneTableView.m */,
+			);
+			name = NoodleKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D4B4892016CC36280095D359 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B4898E16CC36A00095D359 /* NSObject-NoodlePerformWhenIdle.h in Headers */,
+				D4B4898F16CC36A00095D359 /* NSIndexSet-NoodleExtensions.h in Headers */,
+				D4B4899016CC36A00095D359 /* NSResponder-NoodleModalExtensions.h in Headers */,
+				D4B4899116CC36A00095D359 /* NSTimer-NoodleExtensions.h in Headers */,
+				D4B4899216CC36A00095D359 /* NoodleGlue.h in Headers */,
+				D4B4899316CC36A00095D359 /* NSImage-NoodleExtensions.h in Headers */,
+				D4B4899416CC36A00095D359 /* NoodleCustomImageRep.h in Headers */,
+				D4B4899516CC36A00095D359 /* NSWindow-NoodleEffects.h in Headers */,
+				D4B4899616CC36A00095D359 /* NoodleLineNumberMarker.h in Headers */,
+				D4B4899716CC36A00095D359 /* NoodleLineNumberView.h in Headers */,
+				D4B4899816CC36A00095D359 /* NSTableView-NoodleExtensions.h in Headers */,
+				D4B4899916CC36A00095D359 /* NoodleTableView.h in Headers */,
+				D4B4899A16CC36A00095D359 /* NoodleIPhoneTableView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9DDCF4D6134D4DCF00643F87 /* RESTtest */ = {
@@ -224,11 +384,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				D4B4899C16CC37B40095D359 /* PBXTargetDependency */,
 			);
 			name = RESTtest;
 			productName = RESTtest;
 			productReference = 9DDCF4D7134D4DCF00643F87 /* RESTtest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D4B4892216CC36280095D359 /* NoodleKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B4892F16CC36290095D359 /* Build configuration list for PBXNativeTarget "NoodleKit" */;
+			buildPhases = (
+				D4B4892016CC36280095D359 /* Headers */,
+				D4B4892116CC36280095D359 /* Resources */,
+				D4B4891E16CC36280095D359 /* Sources */,
+				D4B4891F16CC36280095D359 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoodleKit;
+			productName = NoodleKit;
+			productReference = D4B4892316CC36290095D359 /* NoodleKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -250,6 +429,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D4B4892216CC36280095D359 /* NoodleKit */,
 				9DDCF4D6134D4DCF00643F87 /* RESTtest */,
 			);
 		};
@@ -268,6 +448,14 @@
 				9DDCF522134D718C00643F87 /* RESTtestHelp in Resources */,
 				9D3E5F491662B2540064A39C /* Icon.iconset in Resources */,
 				9D3E5F4B1662B38C0064A39C /* Icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B4892116CC36280095D359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B4892A16CC36290095D359 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +484,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4B4891E16CC36280095D359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B4892E16CC36290095D359 /* NoodleKit.m in Sources */,
+				D4B4894E16CC36430095D359 /* NSObject-NoodlePerformWhenIdle.m in Sources */,
+				D4B4895016CC36430095D359 /* NSIndexSet-NoodleExtensions.m in Sources */,
+				D4B4895216CC36430095D359 /* NSResponder-NoodleModalExtensions.m in Sources */,
+				D4B4895416CC36430095D359 /* NSTimer-NoodleExtensions.m in Sources */,
+				D4B4895616CC36430095D359 /* NoodleGlue.m in Sources */,
+				D4B4895816CC36430095D359 /* NSImage-NoodleExtensions.m in Sources */,
+				D4B4895A16CC36430095D359 /* NoodleCustomImageRep.m in Sources */,
+				D4B4895C16CC36430095D359 /* NSWindow-NoodleEffects.m in Sources */,
+				D4B4895E16CC36430095D359 /* NoodleLineNumberMarker.m in Sources */,
+				D4B4896016CC36430095D359 /* NoodleLineNumberView.m in Sources */,
+				D4B4896216CC36430095D359 /* NSTableView-NoodleExtensions.m in Sources */,
+				D4B4896416CC36430095D359 /* NoodleTableView.m in Sources */,
+				D4B4896616CC36430095D359 /* NoodleIPhoneTableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4B4899C16CC37B40095D359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B4892216CC36280095D359 /* NoodleKit */;
+			targetProxy = D4B4899B16CC37B40095D359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9DDCF4E4134D4DD000643F87 /* InfoPlist.strings */ = {
@@ -321,6 +538,14 @@
 				9DDCF4F4134D4DD000643F87 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D4B4892816CC36290095D359 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4B4892916CC36290095D359 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,9 +591,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = RESTtest/RESTtest.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Desktop\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -385,16 +613,77 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = RESTtest/RESTtest.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Desktop\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RESTtest/RESTtest-Prefix.pch";
 				INFOPLIST_FILE = "RESTtest/RESTtest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4B4893016CC36290095D359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoodleKit/NoodleKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "NoodleKit/NoodleKit-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		D4B4893116CC36290095D359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoodleKit/NoodleKit-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "NoodleKit/NoodleKit-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -418,6 +707,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D4B4892F16CC36290095D359 /* Build configuration list for PBXNativeTarget "NoodleKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B4893016CC36290095D359 /* Debug */,
+				D4B4893116CC36290095D359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
