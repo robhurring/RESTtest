@@ -1,0 +1,51 @@
+PODS:
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - MIHCrypto (0.3.2):
+    - MIHCrypto/AES (= 0.3.2)
+    - MIHCrypto/Core (= 0.3.2)
+    - MIHCrypto/DES (= 0.3.2)
+    - MIHCrypto/Mathematics (= 0.3.2)
+    - MIHCrypto/MD5 (= 0.3.2)
+    - MIHCrypto/RSA (= 0.3.2)
+    - MIHCrypto/SHA (= 0.3.2)
+  - MIHCrypto/AES (0.3.2):
+    - MIHCrypto/Core
+  - MIHCrypto/Core (0.3.2):
+    - CocoaLumberjack
+    - OpenSSL-Universal
+  - MIHCrypto/DES (0.3.2):
+    - MIHCrypto/Core
+  - MIHCrypto/Mathematics (0.3.2):
+    - MIHCrypto/Core
+  - MIHCrypto/MD5 (0.3.2):
+    - MIHCrypto/Core
+  - MIHCrypto/RSA (0.3.2):
+    - MIHCrypto/Core
+  - MIHCrypto/SHA (0.3.2):
+    - MIHCrypto/Core
+  - OpenSSL-Universal (1.0.1.j-2)
+
+DEPENDENCIES:
+  - MIHCrypto (~> 0.3.2)
+  - OpenSSL-Universal (from `https://github.com/krzyzanowskim/OpenSSL.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  OpenSSL-Universal:
+    :branch: :master
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
+CHECKOUT OPTIONS:
+  OpenSSL-Universal:
+    :commit: 323badfa17d342e8833c6c32f4a1254f79eb78b6
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  MIHCrypto: 54e2d70e4d3c304c06f04d544f4f0d812825109f
+  OpenSSL-Universal: 2187acce4aaec7b0f7532deab46bc3ab104ace51
+
+COCOAPODS: 0.35.0
